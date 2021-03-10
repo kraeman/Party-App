@@ -1,0 +1,17 @@
+<h1>Add Party</h1>
+
+<%= form_with(model: @party) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name%><br>
+    <%= f.label :date %>
+    <%= f.date_field :date %><br>
+    <%= f.label :budget %>
+    <%= f.number_field :budget%><br>
+    <%= f.label :private %>
+    <%= f.select :private, options_for_select(["Select One", "True", "False"],:disabled => ["Select One"]) %><br><br>
+
+    <%= f.submit %>
+
+<% end %>
+
+<%= link_to "Back", :back %>
