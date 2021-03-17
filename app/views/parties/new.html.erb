@@ -1,16 +1,8 @@
 <h1>Add Party</h1>
+<%= render partial: "errors", locals: {thing: @party}%>
 
 <%= form_with(model: @party) do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name%><br>
-    <%= f.label :date %>
-    <%= f.date_field :date %><br>
-    <%= f.label :budget %>
-    <%= f.number_field :budget%><br>
-    <%= f.label :private %>
-    <%= f.select :private, options_for_select(["Select One", "True", "False"],:disabled => ["Select One"]) %><br><br>
-    <%= f.label :category %>
-    <%= f.collection_select :category_id, @categories, :id, :name, prompt: true%>
+    <%= render partial: "form", locals: {party: @party, f: f}%>
     <br>
     <h4> OR make a new category </h4>
 

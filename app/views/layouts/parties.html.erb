@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PartyApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <br><br><br>
+    <nav><%= link_to "New Party", new_party_path %> <%= link_to "Parties", parties_path%></nav>
+    <%= yield %>
+
+    <%= link_to "All Parties", parties_path%>
+  </body>
+</html>

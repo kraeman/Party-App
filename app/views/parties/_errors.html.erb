@@ -1,0 +1,10 @@
+<% if thing.errors.any?%>
+    <div class="errors">
+        <h2><%=pluralize(thing.errors.size, "Error")%> prevented you from saving a <%=thing.class.to_s%><h2>
+        <ul>
+            <%= thing.errors.full_messages.each do |m|%>
+                <li><%=m %></li>
+            <% end %>
+        </ul>
+    </div>    
+<% end %>

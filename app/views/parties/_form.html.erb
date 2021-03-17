@@ -1,0 +1,8 @@
+    <%= f.label :name %>
+    <%= f.text_field :name%><br>
+    <%= f.label :date %>
+    <%= f.date_field :date %><br>
+    <%= f.label :budget %>
+    <%= f.number_field :budget%><br>
+    <%= f.label :private %>
+    <%= f.select :private, options_for_select(["Select One", "True", "False"],:disabled => ["Select One"]) %><br><br>

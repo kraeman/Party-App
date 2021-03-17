@@ -1,6 +1,8 @@
 class PartiesController < ApplicationController
+    
     def index
         @parties = Party.order
+        render :index, layout: false
     end
 
     def show

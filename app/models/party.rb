@@ -1,7 +1,7 @@
 class Party < ApplicationRecord
     belongs_to :category
     has_and_belongs_to_many :supplies
-
+    validates :name, presence: true
     accepts_nested_attributes_for :category, :supplies
 
     def self.order
