@@ -1,4 +1,9 @@
 class Party < ApplicationRecord
+    belongs_to :category
+    has_and_belongs_to_many :supplies
+
+    accepts_nested_attributes_for :category, :supplies
+
     def self.order
         all_parties_dates = []
         array = self.all

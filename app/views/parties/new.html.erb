@@ -9,8 +9,22 @@
     <%= f.number_field :budget%><br>
     <%= f.label :private %>
     <%= f.select :private, options_for_select(["Select One", "True", "False"],:disabled => ["Select One"]) %><br><br>
+    <%= f.label :category %>
+    <%= f.collection_select :category_id, @categories, :id, :name, prompt: true%>
+    <br>
+    <h4> OR make a new category </h4>
 
-    <%= f.submit %>
+    <%= f.fields_for :category do |category_fields| %>
+        <%= category_fields.label :name %>
+        <%= category_fields.text_field :name %>  
+    <% end %>
+    <h4> Create supplies (optional) </h4>
+    <%= f.fields_for :supplies, @party.supplies.build do |supplies_fields| %>
+        <%= supplies_fields.label :name %>
+        <%= supplies_fields.text_field :name %>  
+    <% end %>
+
+    <br><%= f.submit %>
 
 <% end %>
 

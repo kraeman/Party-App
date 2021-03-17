@@ -2,5 +2,9 @@
 <h2>Date: <%= @party.date %></h2><br>
 <h2>Budget: <%= @party.budget %></h2><br>
 <h2>Private: <%= @party.private %></h2><br>
+<h2>Category: <%= @party.category.name %></h2><br>
+<h2>Supplies: <% @party.supplies.each do |supply| %></h2>
+                <%= supply.name %> <br><br>
+              <% end%>
 
 <%= link_to "edit", edit_party_path(@party) %>
