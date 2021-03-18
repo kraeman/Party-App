@@ -1,5 +1,4 @@
-<h2>Name: <%= @party.name %></h2> <br>
-<h2>Date: <%= @party.date %></h2><br>
+<%= render "party", locals:{party: @party}%>
 <h2>Budget: <%= @party.budget %></h2><br>
 <h2>Private: <%= @party.private %></h2><br>
 <h2>Category: <%= @party.category.name %></h2><br>
