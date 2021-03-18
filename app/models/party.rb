@@ -10,6 +10,7 @@ class Party < ApplicationRecord
         array.each do |party|
             all_parties_dates << party.date
         end
+    
         sorted_dates = all_parties_dates.sort
         final_list = []
         sorted_dates.each do |d|

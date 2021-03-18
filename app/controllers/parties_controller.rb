@@ -16,9 +16,9 @@ class PartiesController < ApplicationController
     end
 
     def create
-        party = Party.create(party_params(:name, :date, :budget, :category_id, :private, category_attributes: [:name], supplies_attributes: [:name]))
-        if party.valid?
-            redirect_to party_path(party)
+        @party = Party.create(party_params(:name, :date, :budget, :category_id, :private, category_attributes: [:name], supplies_attributes: [:name]))
+        if @party.valid?
+            redirect_to party_path(@party)
         else
             render :new
         end
